@@ -17,7 +17,7 @@ async function getPendingUsers(req, res) {
 
 async function pendingUserById(req, res) {
   try {
-    const pendingUser = await models.PendingUser.findByPk(req.params.id);
+    const pendingUser = await models.PendingUser.findByPk(req.params.pendingUserId);
     if (!pendingUser) {
       return res.status(404).send({
         message: 'Pending User not found'
@@ -36,7 +36,7 @@ async function pendingUserById(req, res) {
 
 async function acceptUser(req, res) {
   try {
-    const user = await models.PendingUser.findByPk(req.params.id);
+    const user = await models.PendingUser.findByPk(req.params.pendingUserId);
     if (!user) {
       return res.status(404).send({
         message: 'User not found'
@@ -84,7 +84,7 @@ async function getPermissions(req, res) {
 
 async function getPermissionById(req, res) {
   try {
-    const permission = await models.Permission.findByPk(req.params.id);
+    const permission = await models.Permission.findByPk(req.params.permissionId);
     if (!permission) {
       return res.status(404).send({
         message: 'Permission not found'
@@ -103,13 +103,12 @@ async function getPermissionById(req, res) {
 
 async function handlePermission(req, res) {
   try {
-    const permission = await models.Permission.findByPk(req.params.id);
+    const permission = await models.Permission.findByPk(req.params.permissionId);
     if (!permission) {
       return res.status(404).send({
         message: 'Permission not found'
       });
     }
-
     //Validate
     const response = req.params.status;
     const validator = new Validator();
