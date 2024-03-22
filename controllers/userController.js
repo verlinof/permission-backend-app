@@ -47,8 +47,14 @@ async function registerUser(req, res) {
         username: req.body.username
       }
     });
+    //Check if user is pending
+    const isPendingUserExist = await models.User.findOne({
+      where: {
+        username: req.body.username
+      }
+    })
     //Exception Handling
-    if (isUserExist) {
+    if (isUserExist || isPendingUserExist) {
       return res.status(409).send({
         message: 'User already exists'
       });
@@ -73,17 +79,17 @@ async function registerUser(req, res) {
       });
     }
 
+    //Hash Password
     const hash = await bcryptjs.hash(req.body.password, 10);
     const user = {
       name: req.body.name,
       password: hash,
-      status: 'default'
     };
 
-    const newUser = await models.User.create(user);
+    const newUser = await models.PendingUser.create(user);
 
     res.status(201).send({
-      message: 'User created successfully',
+      message: 'User created successfully, wait for admin approval',
       data: {
         name: newUser.name,
       }
