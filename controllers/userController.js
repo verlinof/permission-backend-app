@@ -7,7 +7,7 @@ async function login(req, res) {
   try {
     const user = await models.User.findOne({
       where: {
-        email: req.body.email
+        username: req.body.username
       }
     });
 
@@ -24,7 +24,7 @@ async function login(req, res) {
       });
     }
 
-    const token = jwt.sign({ id: user.userId }, process.env.JWT_KEY);
+    const token = jwt.sign({ id: user.userId, status: user.status }, process.env.JWT_KEY);
     return res.status(200).send({
       message: 'User logged in successfully',
       data: {
