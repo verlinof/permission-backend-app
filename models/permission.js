@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   Permission.init({
     userId: DataTypes.INTEGER,
     title: DataTypes.STRING,
-    description: DataTypes.TEXT
+    description: DataTypes.TEXT,
+    comment: DataTypes.STRING,
+    status: DataTypes.ENUM('default', 'admin', 'verificator')
   }, {
     sequelize,
     modelName: 'Permission',

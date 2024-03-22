@@ -23,6 +23,13 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
+      comment: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      status: {
+        type: Sequelize.ENUM('waiting', 'approve', 'decline'),
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
