@@ -156,8 +156,42 @@ async function registerAdmin(req, res) {
   }
 }
 
+async function resetPassword(req, res) {
+  try {
+    const user = await models.User.findByPk(req.user);
+    if (!user) {
+      return res.status(404).send({
+        message: 'Token invalid'
+      });
+    }
+    const validator = new Validator();
+    const validationResponse = await validator.validate(req.body, {
+      password: { type: 'string', optional: false, max: '50' },
+    })
+    if (validationResponse !== true) {
+      return res.status(400).send({
+        message: 'Validation failed',
+        data: validationResponse
+      });
+    }
+    const hash = await bcryptjs.hash(req.body.password, 10);
+    const response = await user.update({
+      password: hash
+    })
+    return res.status(200).send({
+      message: 'Password updated successfully',
+    });
+
+  } catch (error) {
+    res.status(500).send({
+      message: error.message
+    });
+  }
+}
+
 module.exports = {
   login,
   registerUser,
-  registerAdmin
+  registerAdmin,
+  resetPassword
 }
