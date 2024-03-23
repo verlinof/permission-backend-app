@@ -11,3 +11,9 @@ sequelize db:migrate
 ```
 sequelize db:seed:all
 ```
+
+4. Run Project
+
+```
+npm run start
+```

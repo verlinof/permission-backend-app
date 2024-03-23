@@ -1,0 +1,1202 @@
+{
+	"info": {
+		"_postman_id": "f4e3aa21-d7a8-49b7-9fbf-5946bf9bb2d7",
+		"name": "Test-backend-sesasi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29516691",
+		"_collection_link": "https://warped-meteor-996641.postman.co/workspace/My-Workspace~564d2300-8693-4b34-8eff-bfe3595928c2/collection/29516691-f4e3aa21-d7a8-49b7-9fbf-5946bf9bb2d7?action=share&source=collection_link&creator=29516691"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"verlinofajri\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{express-url}}/auth/login",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failed Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/auth/login",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-dBEoW0UmTF+EGUMaprEp9/8zNNA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 09:05:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid credentials\"\n}"
+						},
+						{
+							"name": "Admin Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/auth/login",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c6-7Q1I6x7YxcKk19S2YtOTcPp+shw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 09:05:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywic3RhdHVzIjoiYWRtaW4iLCJpYXQiOjE3MTExODQ3NDZ9.36csB1GPRlepjZDpJbHfa7l6EGXNk5Y5FZ4zMLSd31A\"\n    }\n}"
+						},
+						{
+							"name": "Verificator Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"verificator\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/auth/login",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ce-p2Y6VCDlSZKpvc/D8Xf4OkP+AiU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 09:17:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwic3RhdHVzIjoidmVyaWZpY2F0b3IiLCJpYXQiOjE3MTExODU0Mjd9.kUSMCA4pgWkoIgOV8WbpNAVrzEyv0df-Q6RvVUknFQs\"\n    }\n}"
+						},
+						{
+							"name": "User Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"verlinofajri\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/auth/login",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-adyOhrleGrNo06qxrdFaOBDQQUw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 12:32:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwic3RhdHVzIjoiZGVmYXVsdCIsImlhdCI6MTcxMTE5NzEzNH0.bNBJggKj8UiHnMG4qRkq0bDOFWhnFX4GUSUvwAKTUBo\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register Default User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"huda\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{express-url}}/auth/register-user",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"auth",
+								"register-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"verlinofajri\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/auth/register-user",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"auth",
+										"register-user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-lvl3ylZX9OXi/GTbEn4APchvrM0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 09:08:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User created successfully, wait for admin approval\",\n    \"data\": {\n        \"username\": \"verlinofajri\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{express-url}}/auth/register-admin",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"auth",
+								"register-admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/auth/register-admin",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"auth",
+										"register-admin"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-EfaCSpD4NHJnyHQmatxaolQ3IZ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 09:09:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"username\": \"admin\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"updatePassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{express-url}}/auth/reset-password",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/admin/users",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Fetch",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{express-url}}/admin/users",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "539"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21b-gNGlekoyO9e3frN2tYL5O+azSzA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 09:16:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Users fetched successfully\",\n    \"data\": {\n        \"users\": [\n            {\n                \"userId\": 1,\n                \"username\": \"admin\",\n                \"status\": \"admin\",\n                \"createdAt\": \"2024-03-23T09:09:04.000Z\",\n                \"updatedAt\": \"2024-03-23T09:10:32.000Z\"\n            },\n            {\n                \"userId\": 2,\n                \"username\": \"verificator\",\n                \"status\": \"verificator\",\n                \"createdAt\": \"2024-03-23T09:15:30.000Z\",\n                \"updatedAt\": \"2024-03-23T09:15:30.000Z\"\n            }\n        ],\n        \"pendingUser\": [\n            {\n                \"pendingUserId\": 1,\n                \"username\": \"verlinofajri\",\n                \"password\": \"$2a$10$c6tR7nVzkKEkPPKv/Bfyxeha5coKxUKGp.iOPdCK/WelcjKCsY2bi\",\n                \"createdAt\": \"2024-03-23T09:08:49.000Z\",\n                \"updatedAt\": \"2024-03-23T09:08:49.000Z\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Failed Fetch",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{express-url}}/admin/users",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-nNzyv7KaH4fH/YcgWkRsNvLRou4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 09:17:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"auth\": false,\n    \"message\": \"You are not an admin.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Permissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/admin/permissions",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"admin",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Permission by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/admin/permissions/1",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"admin",
+								"permissions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Verificator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"verificator\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{express-url}}/admin/register-verificator",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"admin",
+								"register-verificator"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"verificator\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/admin/register-verificator",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"admin",
+										"register-verificator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "266"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10a-PuqOLcStLy0IRuzlKRtCFpVB5CU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 09:15:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Verificator created successfully\",\n    \"data\": {\n        \"userId\": 2,\n        \"username\": \"verificator\",\n        \"password\": \"$2a$10$/OG2PAfA1WnJbz1F6jgJ8uwQ5wlhL0K/OsFn43ofGFdbA/8TElqxS\",\n        \"status\": \"verificator\",\n        \"updatedAt\": \"2024-03-23T09:15:30.816Z\",\n        \"createdAt\": \"2024-03-23T09:15:30.816Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Verificator",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/admin/update-verificator/3",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"admin",
+								"update-verificator",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{express-url}}/admin/update-verificator/9",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"admin",
+										"update-verificator",
+										"9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "267"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10b-vMbtQ85nhRR/ikJhfudfgOlsdHc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 12:36:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Verificator updated successfully\",\n    \"data\": {\n        \"userId\": 9,\n        \"username\": \"verlinofajri\",\n        \"password\": \"$2a$10$jwQ150yNX0I8Tzl6VTU0Z.4PkeiNIhNhZme5lcMoQm53Iq5FMBStm\",\n        \"status\": \"verificator\",\n        \"createdAt\": \"2024-03-23T12:31:53.000Z\",\n        \"updatedAt\": \"2024-03-23T12:36:34.376Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"updatePassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{express-url}}/admin/reset-password/3",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"admin",
+								"reset-password",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\" : \"updatePassword\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/admin/reset-password/3",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"admin",
+										"reset-password",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"104-0NFOkl6lTERMJ+++NmqkEaCpC1w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 12:50:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"userId\": 3,\n        \"username\": \"verlinofajri\",\n        \"password\": \"$2a$10$dk.YrJJxgBlUYvjziPMgjOHHWlj57QBdhAhbhcWf1xCZL5CB.agsW\",\n        \"status\": \"verificator\",\n        \"createdAt\": \"2024-03-23T12:31:53.000Z\",\n        \"updatedAt\": \"2024-03-23T12:50:06.873Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Verificator",
+			"item": [
+				{
+					"name": "Accept User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/verificator/accept-user/1",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"verificator",
+								"accept-user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Handle Permission",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"decline\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{express-url}}/verificator/handle-permission/1",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"verificator",
+								"handle-permission",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Approve Example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\" : \"approve\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/verificator/handle-permission/1",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"verificator",
+										"handle-permission",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "289"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"121-V4jAPg1y0OrjrYVSQm6ejVIYLh4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 13:23:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Permission Approved\",\n    \"data\": {\n        \"permissionId\": 1,\n        \"userId\": 3,\n        \"title\": \"Izin Cuti Khusus\",\n        \"description\": \"Saya mengajukan izin cuti khusus karna saya akan menjalani ....\",\n        \"comment\": null,\n        \"status\": \"approve\",\n        \"createdAt\": \"2024-03-23T12:56:26.000Z\",\n        \"updatedAt\": \"2024-03-23T13:23:57.502Z\"\n    }\n}"
+						},
+						{
+							"name": "Decline Example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\" : \"decline\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{express-url}}/verificator/handle-permission/1",
+									"host": [
+										"{{express-url}}"
+									],
+									"path": [
+										"verificator",
+										"handle-permission",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "289"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"121-EQmth0kDYSXERHPWpCCVzaIO4KI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Mar 2024 13:24:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Permission Declined\",\n    \"data\": {\n        \"permissionId\": 1,\n        \"userId\": 3,\n        \"title\": \"Izin Cuti Khusus\",\n        \"description\": \"Saya mengajukan izin cuti khusus karna saya akan menjalani ....\",\n        \"comment\": null,\n        \"status\": \"decline\",\n        \"createdAt\": \"2024-03-23T12:56:26.000Z\",\n        \"updatedAt\": \"2024-03-23T13:24:22.723Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Permissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/verificator/permissions",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"verificator",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Permission by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/verificator/permissions/1",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"verificator",
+								"permissions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pending Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/verificator/pending-users",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"verificator",
+								"pending-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pending User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{express-url}}/verificator/pending-users/2",
+							"host": [
+								"{{express-url}}"
+							],
+							"path": [
+								"verificator",
+								"pending-users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwic3RhdHVzIjoidmVyaWZpY2F0b3IiLCJpYXQiOjE3MTExODU0Mjd9.kUSMCA4pgWkoIgOV8WbpNAVrzEyv0df-Q6RvVUknFQs",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
