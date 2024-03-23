@@ -12,7 +12,7 @@ function checkAdminVerificator(req, res, next) {
           message: 'Failed to authenticate token.'
         });
       }
-      if (decoded.status === 'verificator') {
+      if (decoded.status === 'default') {
         return res.status(401).send({
           auth: false,
           message: 'Unauthorized.'

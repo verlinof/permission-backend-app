@@ -67,7 +67,11 @@ async function acceptUser(req, res) {
 
 async function getPermissions(req, res) {
   try {
-    const permissions = await models.Permission.findAll();
+    const permissions = await models.Permission.findAll({
+      include: [{
+        model: models.User
+      }]
+    });
     return res.status(200).send({
       message: 'Permissions fetched successfully',
       data: permissions
@@ -107,7 +111,7 @@ async function handlePermission(req, res) {
       });
     }
     //Validate
-    const response = req.params.status;
+    const response = { status: req.body.status };
     const validator = new Validator();
     const validationResponse = await validator.validate(response, {
       status: { type: 'enum', values: ['approve', 'decline'] }
@@ -118,20 +122,24 @@ async function handlePermission(req, res) {
         data: validationResponse
       });
     }
-    if (response === 'approve') {
-      await models.Permission.update({ status: 'approve' }, {
+    if (response.status === 'approve') {
+      await permission.update({ status: 'approve' }, {
         where: {
           permissionId: req.params.id
         }
       })
+      return res.status(200).send({
+        message: 'Permission Approved',
+        data: permission
+      })
     }
-    await models.Permission.update({ status: 'decline' }, {
+    await permission.update({ status: 'decline' }, {
       where: {
         permissionId: req.params.id
       }
     })
     return res.status(200).send({
-      message: 'Permission ' + response,
+      message: 'Permission Declined',
       data: permission
     })
   } catch (error) {

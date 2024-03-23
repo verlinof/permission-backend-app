@@ -7,7 +7,7 @@ const router = express.Router();
 
 //Route
 router.get('/accept-user/:pendingUserId', verificatorAccess.checkVerificator, verificatorController.acceptUser);
-router.put('/handle-permission/:permissionId', verificatorAccess.checkVerificator, verificatorController.handlePermission);
+router.patch('/handle-permission/:permissionId', verificatorAccess.checkVerificator, verificatorController.handlePermission);
 router.get('/permissions', adminVerificatorAccess.checkAdminVerificator, verificatorController.getPermissions); //Admin and Verificator Access
 router.get('/permissions/:permissionId', adminVerificatorAccess.checkAdminVerificator, verificatorController.getPermissionById); //Admin and Verificator Access
 router.get('/pending-users', verificatorAccess.checkVerificator, verificatorController.getPendingUsers);
