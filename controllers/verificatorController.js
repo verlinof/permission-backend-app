@@ -50,11 +50,8 @@ async function acceptUser(req, res) {
     //Handle new User from pending to active
     const newUser = await models.User.create(userData);
     if (newUser) {
-      await models.PendingUser.destroy({
-        where: {
-          id: req.params.id
-        }
-      })
+      const pendingUser = await models.PendingUser.findByPk(req.params.pendingUserId)
+      await pendingUser.destroy();
     }
 
     return res.status(200).send({

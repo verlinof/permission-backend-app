@@ -14,7 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   PendingUser.init({
-    username: DataTypes.STRING,
+    pendingUserId: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    username: {
+      type: DataTypes.STRING,
+      unique: true
+    },
     password: DataTypes.STRING
   }, {
     sequelize,

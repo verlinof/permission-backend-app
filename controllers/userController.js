@@ -82,7 +82,7 @@ async function registerUser(req, res) {
     //Hash Password
     const hash = await bcryptjs.hash(req.body.password, 10);
     const user = {
-      name: req.body.name,
+      username: req.body.username,
       password: hash,
     };
 
@@ -91,7 +91,7 @@ async function registerUser(req, res) {
     res.status(201).send({
       message: 'User created successfully, wait for admin approval',
       data: {
-        name: newUser.name,
+        username: newUser.username,
       }
     });
   } catch (error) {
@@ -108,8 +108,14 @@ async function registerAdmin(req, res) {
         username: req.body.username
       }
     });
+    //Check if user is pending
+    const isPendingUserExist = await models.User.findOne({
+      where: {
+        username: req.body.username
+      }
+    })
     //Exception Handling
-    if (isUserExist) {
+    if (isUserExist || isPendingUserExist) {
       return res.status(409).send({
         message: 'User already exists'
       });
@@ -136,7 +142,7 @@ async function registerAdmin(req, res) {
 
     const hash = await bcryptjs.hash(req.body.password, 10);
     const user = {
-      name: req.body.name,
+      username: req.body.username,
       password: hash,
       status: 'admin'
     };
@@ -146,7 +152,7 @@ async function registerAdmin(req, res) {
     res.status(201).send({
       message: 'User created successfully',
       data: {
-        name: newUser.name,
+        username: newUser.username,
       }
     });
   } catch (error) {
