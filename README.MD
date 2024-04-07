@@ -53,3 +53,6 @@ sequelize db:seed:all
 ```
 npm run start
 ```
+
+6. Test the API
+   To test the API you can import the Test-backend-sesasi.postman_collection.json to the Postman, so you can check the full documentation
