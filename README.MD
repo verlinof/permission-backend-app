@@ -30,6 +30,8 @@ Tugas anda kali ini adalah membuat sebuah backend aplikasi pengajuan izin, yang 
 - Implementasikan fungsi validasi untuk memastikan data yang dimasukkan sesuai
 - Perhatikan akses ke masing-masing endpoint sesuai autentikasi yang dimiliki
 
+## How to run this project
+
 1. Run Migration
 
 ```
@@ -38,13 +40,15 @@ sequelize db:migrate
 
 2. Register Default User and Admin
 
-3. Run Seeder for Permissions
+3. Create Database name "express_db" in MySQL
+
+4. Run Seeder for Permissions
 
 ```
 sequelize db:seed:all
 ```
 
-4. Run Project
+5. Run Project
 
 ```
 npm run start
