@@ -38,9 +38,9 @@ Tugas anda kali ini adalah membuat sebuah backend aplikasi pengajuan izin, yang 
 sequelize db:migrate
 ```
 
-2. Register Default User and Admin
+2. Create Database name "express_db" in MySQL
 
-3. Create Database name "express_db" in MySQL
+3. Register Default User and Admin 
 
 4. Run Seeder for Permissions
 
