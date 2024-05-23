@@ -32,13 +32,12 @@ Tugas anda kali ini adalah membuat sebuah backend aplikasi pengajuan izin, yang 
 
 ## How to run this project
 
-1. Run Migration
+1. Create Database name "express_db" in MySQL
+2. Run Migration
 
 ```
 sequelize db:migrate
 ```
-
-2. Create Database name "express_db" in MySQL
 
 3. Register Default User and Admin 
 
