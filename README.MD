@@ -1,7 +1,4 @@
 # About This Projects
-
-Tugas anda kali ini adalah membuat sebuah backend aplikasi pengajuan izin, yang memiliki spesifikasi sebagai berikut:
-
 - Terdapat 3 level pengguna: Admin, Verifikator dan pengguna biasa.
 - Ijin yang diajukan berfomat free text judul, isi, dan detail yang mengajukan ijin
 - Buat table database sesuikan kebutuhan aplikasi dengan relasi antar tabel.
